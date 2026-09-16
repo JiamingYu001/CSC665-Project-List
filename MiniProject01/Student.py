@@ -1,3 +1,5 @@
+# This class is written by Jiaming Yu
+
 from Person import Person
 
 class Student(Person):
@@ -7,6 +9,9 @@ class Student(Person):
             person.last_name,
             person.age,
             person.address)
+        if (not isinstance(student_id, int)
+                or not isinstance(major, str) or not major.strip()):
+            raise ValueError('Student id and major cannot be empty or invalid values')
         self.student_id = student_id
         self.major = major
 
@@ -17,9 +22,13 @@ class Student(Person):
         return previous
 
     def set_student_id(self, student_id):
+        if not isinstance(student_id, int):
+            raise ValueError('Student id cannot empty or invalid values')
         self.student_id = student_id
 
     def set_major(self, major):
+        if not isinstance(major, str) or not major.strip():
+            raise ValueError('Major cannot be empty or invalid values')
         self.major = major
 
     def get_student_id(self):
