@@ -46,7 +46,3 @@ class Person:
 
     def get_address(self):
         return self.address
-
-
-person = Person('John', 'Doe', 10, 'ss')
-print(person.get_details())
